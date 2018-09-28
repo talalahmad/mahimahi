@@ -105,6 +105,7 @@ LinkQueue::LinkQueue( const string & link_name, const string & filename, const s
 
 void LinkQueue::record_arrival( const uint64_t arrival_time, const size_t pkt_size )
 {
+	// Shiva: This is probably the place to record packet_queue size
     /* log it */
     if ( log_ ) {
         *log_ << arrival_time << " + " << pkt_size << endl;
@@ -131,6 +132,7 @@ void LinkQueue::record_departure_opportunity( void )
 
 void LinkQueue::record_departure( const uint64_t departure_time, const QueuedPacket & packet )
 {
+	// Shiva: This is probably the place to record output_queue size
     /* log the delivery */
     if ( log_ ) {
         *log_ << departure_time << " - " << packet.contents.size()

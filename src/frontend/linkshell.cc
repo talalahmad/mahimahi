@@ -180,7 +180,10 @@ int main( int argc, char *argv[] )
         }
 
         PacketShell<LinkQueue> link_shell_app( "link", user_environment );
-
+	
+	// Shiva: Both calls below initialize new child processes in packetshell.cc,
+	// that pass all arguments (starting from "Uplink/Downlink", to new instances
+	// of LinkQueue (link_queue.cc)
         link_shell_app.start_uplink( "[link] ", command,
                                      "Uplink", uplink_filename, uplink_logfile, repeat, meter_uplink, meter_uplink_delay,
                                      get_packet_queue( uplink_queue_type, uplink_queue_args, argv[ 0 ] ),
