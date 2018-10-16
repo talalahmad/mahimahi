@@ -126,7 +126,10 @@ unsigned int DroppingPacketQueue::get_arg( const string & args, const string & n
         if ( digit_string.empty() ) {
             throw runtime_error( "could not parse queue arguments: " + args );
         }
-
+        //Talal
+        //cout <<"dropping_packet_queue.cc"<<endl;
+        //cout<<digit_string<<endl;
+        //cout<<myatoi(digit_string)<<endl;
         return myatoi( digit_string );
     }
 }

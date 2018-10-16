@@ -17,7 +17,10 @@ long int myatoi( const string & str, const int base )
     char *end;
 
     errno = 0;
-    long int ret = strtol( str.c_str(), &end, base );
+    //Talal: bug fixed here - strtol changed to strtoll because I was getting the 
+    //error strtol: Numerical result out of range
+    
+    long int ret = strtoll( str.c_str(), &end, base );
 
     if ( errno != 0 ) {
         throw unix_error( "strtol" );

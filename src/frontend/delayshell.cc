@@ -23,7 +23,22 @@ int main( int argc, char *argv[] )
             throw runtime_error( "Usage: " + string( argv[ 0 ] ) + " delay-milliseconds [command...]" );
         }
 
+        // const string & logfile = "testlog";
+        // std::unique_ptr<std::ofstream> log_;
+
+        // if ( not logfile.empty() ) {
+        //     log_.reset( new ofstream( logfile ) );
+        //     if ( not log_->good() ) {
+        //         throw runtime_error( logfile + ": error opening for writing" );
+        //     }
+
+        //     *log_ << "# mahimahi " << logfile << endl;
+        //     *log_ << argv[1] <<endl;
+        // }
+        //cout<<argv[1]<<endl;
         const uint64_t delay_ms = myatoi( argv[ 1 ] );
+        //cout<<delay_ms<<endl;
+        //*log_<<delay_ms<<endl;
 
         vector< string > command;
 

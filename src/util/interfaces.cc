@@ -95,6 +95,10 @@ Interfaces::Interfaces()
         sockaddr_in ip;
         zero( ip );
         ip.sin_family = AF_INET;
+        //Talal
+        //cout <<"interfaces.cc"<<endl;
+        //cout<<dest_address<<endl;
+        //cout<<myatoi(dest_address,16)<<endl;
         ip.sin_addr.s_addr = myatoi( dest_address, 16 );
 
         addresses_in_use_.emplace_back( ip );

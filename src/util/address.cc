@@ -129,7 +129,10 @@ pair<string, uint16_t> Address::ip_port( void ) const
     if ( gni_ret ) {
         throw tagged_error( gai_error_category(), "getnameinfo", gni_ret );
     }
-
+    //Talal
+    //cout <<"address.cc"<<endl;
+    //cout<<port<<endl;
+    //cout<<myatoi(port)<<endl;
     return make_pair( ip, myatoi( port ) );
 }
 
