@@ -21,11 +21,11 @@ int ezexec( const vector< string > & command, const bool path_search )
     }
 
     if ( geteuid() == 0 or getegid() == 0 ) {
-        if ( environ ) {
+        //if ( environ ) {
             //Talal: removed this check for Emir
             //throw runtime_error( "BUG: root's environment not cleared" );
-            continue;
-        }
+        //    continue;
+        //}
 
         if ( path_search ) {
             throw runtime_error( "BUG: root should not search PATH" );
