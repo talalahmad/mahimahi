@@ -46,6 +46,11 @@ public:
     {
         return "infinite";
     }
+
+    int getQueueSize( void )
+    {
+        return internal_queue_.size();
+    }
 };
 
 #endif /* INFINITE_PACKET_QUEUE_HH */ 
