@@ -32,6 +32,11 @@ QueuedPacket DroppingPacketQueue::dequeue( void )
     return ret;
 }
 
+int DroppingPacketQueue::size( void ) const 
+{
+    return internal_queue_.size();
+}
+
 bool DroppingPacketQueue::empty( void ) const
 {
     return internal_queue_.empty();

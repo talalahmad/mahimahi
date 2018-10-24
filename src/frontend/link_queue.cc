@@ -108,7 +108,7 @@ void LinkQueue::record_arrival( const uint64_t arrival_time, const size_t pkt_si
 	// Shiva: This is probably the place to record packet_queue size
     /* log it */
     if ( log_ ) {
-        *log_ << arrival_time << " + " << pkt_size <<"~"<<packet_queue_.getQueueSize()<< endl;
+        *log_ << arrival_time << " + " << pkt_size <<"~"<<packet_queue_->size()<< endl;
     }
 
     /* meter it */
@@ -121,7 +121,7 @@ void LinkQueue::record_departure_opportunity( void )
 {
     /* log the delivery opportunity */
     if ( log_ ) {
-        *log_ << next_delivery_time() << " # " << PACKET_SIZE <<"~"<<packet_queue_.getQueueSize()<< endl;
+        *log_ << next_delivery_time() << " # " << PACKET_SIZE <<"~"<<packet_queue_->size()<< endl;
     }
 
     /* meter the delivery opportunity */
@@ -136,7 +136,7 @@ void LinkQueue::record_departure( const uint64_t departure_time, const QueuedPac
     /* log the delivery */
     if ( log_ ) {
         *log_ << departure_time << " - " << packet.contents.size()
-              << " " << departure_time - packet.arrival_time <<"~"<<packet_queue_.getQueueSize()<< endl;
+              << " " << departure_time - packet.arrival_time <<"~"<<packet_queue_->size()<< endl;
     }
 
     /* meter the delivery */

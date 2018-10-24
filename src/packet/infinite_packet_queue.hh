@@ -47,7 +47,7 @@ public:
         return "infinite";
     }
 
-    int getQueueSize( void )
+    int size( void ) const override
     {
         return internal_queue_.size();
     }

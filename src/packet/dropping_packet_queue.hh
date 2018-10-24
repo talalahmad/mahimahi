@@ -45,6 +45,9 @@ public:
     std::string to_string( void ) const override;
 
     static unsigned int get_arg( const std::string & args, const std::string & name );
+
+    int size( void ) const override;
+    
 };
 
 #endif /* DROPPING_PACKET_QUEUE_HH */ 
